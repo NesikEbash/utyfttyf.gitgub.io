@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+            color: white;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #cc0000;
+        }
+
+        .question {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Опрос на то, что вы хотели бы видеть в нашем канале</h1>
+        <form id="survey-form">
+            <div class="question">
+                <label for="q1">1. Напишите, что вы хотите видеть у нас в канале:</label>
+                <textarea id="q1" name="q1" required></textarea>
+            </div>
+            <div class="question">
+                <label for="q2">2. Что вам не интересно видеть в нашем канале:</label>
+                <textarea id="q2" name="q2" required></textarea>
+            </div>
+            <div class="question">
+                <label for="q3">3. Хотите ли вы видеть контент, связанный с самообороной?</label>
+                <select id="q3" name="q3" required>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                    <option value="возможно">Возможно</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q4">4. Запускать ли нам чаще трансляции?</label>
+                <select id="q4" name="q4" required>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                    <option value="возможно">Возможно</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q5">5. Нужен ли вам контент, связанный со школой?</label>
+                <select id="q5" name="q5" required>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                    <option value="возможно">Возможно</option>
+                </select>
+            </div>
+            <button type="submit">Отправить ответы</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("survey-form").addEventListener("submit", function(e) {
+            e.preventDefault(); // Чтобы форма не перезагружала страницу
+            const responses = {
+                question1: document.getElementById("q1").value,
+                question2: document.getElementById("q2").value,
+                question3: document.getElementById("q3").value,
+                question4: document.getElementById("q4").value,
+                question5: document.getElementById("q5").value
+            };
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9vq-nkDrfQTDLDYyfUheqHH0jVJrIJNH5kBcqoFouzxr_tw/viewform?embedded=true" width="640" height="1427" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+            // Здесь мы выводим в консоль ответы, но можно сделать с сервером или базой данных
+            console.log("Ответы на опрос:", responses);
+
+            alert("Спасибо за участие в опросе!");
+            document.
+getElementById("survey-form").reset(); // Сбрасываем форму
+        });
+    </script>
+</body>
+</html>
